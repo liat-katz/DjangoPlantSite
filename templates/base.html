@@ -1,10 +1,12 @@
+{%load static%}
 <!DOCTYPE HTML>
 <html>
 <head>
     <meta charset="utf-8" />
     <title>{% block page_title %}Liat's Plant Site{%endblock%}</title> {% comment %} block lets us inject content into it- must be given a name, needs an endblock because it's a tag, can set a default title between both {% endcomment %}
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-{%block css_files%} {%endblock%}
+<link rel="stylesheet" href="{%static "styles.css"%}">
+    {%block css_files%} {%endblock%}
 </head>
 <body>
     {%block content%}
