@@ -1,7 +1,12 @@
 {%extends "base.html"%} 
+{%load static %} 
+{% comment %} load static loads the static css file {% endcomment, must link to it below %}
 {% comment %} To use the template we created called base.html, we need to do the following {% endcomment %}
 {% comment %} we go to settings.py to link base.html her by adding it to templates/dirs {% endcomment %}
 {% comment %} using the base.html as a template means we can get rid of all the structural stuff {% endcomment %}
+{%block css_files%}
+<link rel="stylesheet" href="{%static "plant_types/plant_types.css"%}">
+{%endblock%}
 {%block page_title%} {% comment %} should match the base.html block tags {% endcomment %}
 Plant Directory
 {%endblock%}

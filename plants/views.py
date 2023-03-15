@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from django.http import HttpResponse, HttpResponseNotFound
+from django.http import HttpResponse, HttpResponseNotFound, Http404
 from django.urls import reverse
 from django.template.loader import render_to_string
 
@@ -30,4 +30,6 @@ def plant_info(request, plant_type):
         return render(request, "plant_types/plant_types.html", {"text": plant_text,
                                                                 "plant_type_name":plant_type})
     except:
-        return HttpResponseNotFound("<h1>This plant family isn't registered yet!</h1>")
+        raise Http404() #this specifically looks for a file titled 404.html, only works with debug=False so only good for production
+        # response_data=render_to_string("404.html")
+        # return HttpResponseNotFound(response_data)
