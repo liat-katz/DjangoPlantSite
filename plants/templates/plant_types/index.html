@@ -1,0 +1,17 @@
+{%extends "base.html"%} 
+{% comment %} To use the template we created called base.html, we need to do the following {% endcomment %}
+{% comment %} we go to settings.py to link base.html her by adding it to templates/dirs {% endcomment %}
+{% comment %} using the base.html as a template means we can get rid of all the structural stuff {% endcomment %}
+{%block page_title%} {% comment %} should match the base.html block tags {% endcomment %}
+Plant Directory
+{%endblock%}
+
+{%block content%}
+{%include "plant_types/include_snippets/header.html"%}
+<h1>Plant Types</h1>
+    <ul>
+        {% for plant_type in the_plant_types %}
+        <li><a href="/plants/{{plant_type}}">{{plant_type|title}}</a></li>
+        {% endfor %}
+    </ul>
+{%endblock%}

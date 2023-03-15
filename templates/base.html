@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>{% block page_title %}Liat's Plant Site{%endblock%}</title> {% comment %} block lets us inject content into it- must be given a name, needs an endblock because it's a tag, can set a default title between both {% endcomment %}
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+    {%block content%}
+    Here is some fallback content!
+    {%endblock%}
+</body>
+</html>

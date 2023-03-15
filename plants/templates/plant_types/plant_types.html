@@ -1,0 +1,15 @@
+{%extends "base.html"%} 
+
+{%block page_title%}
+    {{plant_type_name|title}}
+{%endblock%}
+
+{%block content%}
+{%include "plant_types/include_snippets/header.html"%}
+    <h1>{{plant_type_name|title}}</h1>
+    {%if text is not None%}
+        <h2>{{text}}</h2>
+    {%else%}
+        <p>Nothing for this plant type yet!</p>
+    {%endif%}
+{%endblock%}

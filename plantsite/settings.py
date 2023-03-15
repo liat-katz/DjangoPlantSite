@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "plants" #add app name
 ]
 
 MIDDLEWARE = [
@@ -54,8 +55,11 @@ ROOT_URLCONF = "plantsite.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
-        "APP_DIRS": True,
+        "DIRS": [
+            # BASE_DIR /"plants"/"templates"
+            BASE_DIR/"templates" #this checks the templates folder for templates
+            ],
+        "APP_DIRS": True, #says to look for template folders in app folders, must register app with the project to use this in installed_apps above
         "OPTIONS": {
             "context_processors": [
                 "django.template.context_processors.debug",
